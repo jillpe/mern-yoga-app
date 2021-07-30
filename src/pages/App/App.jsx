@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import CreateFlowPage from '../CreateFlowPage/CreateFlowPage';
+import FlowListPage from '../FlowListPage/FlowListPage';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 
-function App() {
+export default function App() {
 	const [user, setUser] = useState(getUser());
 	return (
 		<main className='App'>
@@ -15,13 +15,13 @@ function App() {
 				<>
 					<NavBar user={user} setUser={setUser} />
 					<Switch>
-						<Route path='/orders/new'>
-							<NewOrderPage />
+						<Route path='/flows/create'>
+							<CreateFlowPage />
 						</Route>
-						<Route path='/orders'>
-							<OrderHistoryPage />
+						<Route path='/flows'>
+							<FlowListPage />
 						</Route>
-						<Redirect to='/orders' />
+						<Redirect to='/flows' />
 					</Switch>
 				</>
 			) : (
@@ -31,4 +31,3 @@ function App() {
 	);
 }
 
-export default App;

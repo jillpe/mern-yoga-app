@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 // We can call any exported function with this import as userService
 import * as usersService from '../../utilities/users-service';
 
-function NavBar({ user, setUser }) {
+export default function NavBar({ user, setUser }) {
 	// Add the following function
 	function handleLogOut() {
 		// Delegate to the users-service
@@ -13,9 +13,9 @@ function NavBar({ user, setUser }) {
 
 	return (
 		<nav>
-			<Link to='/orders'>Order History</Link>
+			<Link to='/flows'>All Flows</Link>
 			&nbsp; | &nbsp;
-			<Link to='/orders/new'>New Order</Link>
+			<Link to='/flows/create'>Create a Flow</Link>
 			&nbsp; | &nbsp;
 			<span>
 				<b>Welcome, {user.name}</b>
@@ -28,4 +28,3 @@ function NavBar({ user, setUser }) {
 	);
 }
 
-export default NavBar;
