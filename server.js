@@ -6,7 +6,7 @@ const logger = require('morgan');
 require('dotenv').config();
 require('./config/database');
 
-const flowsRouter = require('./routes/api/flows')
+// const flowsRouter = require('./routes/api/flows')
 
 const app = express();
 
@@ -17,7 +17,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(require('./config/checkToken'));
 
-app.use('/api/flows', flowsRouter);
+app.use('/api/users', require('./routes/api/users'));
+// app.use('/api/flows', flowsRouter);
 
 app.get('/*', function (req, res) {
 	res.sendFile(path.join(__dirname, 'build', 'index.html'));
