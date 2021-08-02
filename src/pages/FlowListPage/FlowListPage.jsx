@@ -14,12 +14,12 @@ export default function FlowListPage(props) {
 				Check When My Login Expires
 			</button>
 			<div>
-				{props.flows.map(flow =>
+				{props.flows.map(flow => (
 					<FlowListFlow
 						flow={flow}
 						key={flow._id}
 					/>
-				)}
+				))}
 			</div>
 		</>
 	);

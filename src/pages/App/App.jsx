@@ -11,7 +11,7 @@ import './App.css';
 export default function App(props) {
 	const [user, setUser] = useState(getUser());
 	const [flows, setFlows] = useState([]);
-	// const history = useHistory();
+	const history = useHistory();
 
 	useEffect(() => {
 		async function getFlows(){
@@ -21,9 +21,15 @@ export default function App(props) {
 		getFlows();
 	}, [])
 
-	// useEffect(() => {
-	// 	history.push('/');
-	// }, [flows, history]);
+	useEffect(() => {
+		history.push('/flows')
+	}, [flows, history])
+
+	async function handleAddFlow (newFlowData) {
+		console.log(newFlowData);
+		const newFlow = await flowAPI.create(newFlowData);
+		setFlows([...flows, newFlow])
+	}
 
 	return (
 		<main className='App'>
@@ -31,11 +37,11 @@ export default function App(props) {
 				<>
 					<NavBar user={user} setUser={setUser} />
 					<Switch>
-						<Route path='/flows'>
-							<FlowListPage flows={flows}/>
+						<Route exact path='/flows/create'>
+							<CreateFlowPage handleAddFlow={handleAddFlow}/>
 						</Route>
-						<Route path='/flows/create'>
-							<CreateFlowPage />
+						<Route  exact path='/flows'>
+							<FlowListPage flows={flows}/>
 						</Route>
 						<Redirect to='/flows' />
 					</Switch>

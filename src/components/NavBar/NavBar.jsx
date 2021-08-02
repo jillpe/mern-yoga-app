@@ -15,7 +15,7 @@ export default function NavBar({ user, setUser }) {
 		<nav>
 			<Link to='/flows'>All Flows</Link>
 			&nbsp; | &nbsp;
-			<Link to='/flows/create'>Create a Flow</Link>
+			<Link to='flows/create'>Create a Flow</Link>
 			&nbsp; | &nbsp;
 			<span>
 				<b>Welcome, {user.name}</b>
