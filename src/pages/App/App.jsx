@@ -10,16 +10,16 @@ import './App.css';
 
 export default function App(props) {
 	const [user, setUser] = useState(getUser());
-	// const [flows, setFlows] = useState([]);
+	const [flows, setFlows] = useState([]);
 	// const history = useHistory();
 
-	// useEffect(() => {
-	// 	async function getFlows() {
-	// 		const flows = await flowAPI.getAll();
-	// 		// setFlows(flows);
-	// 	}
-	// 	getFlows();
-	// }, []);
+	useEffect(() => {
+		async function getFlows(){
+			const flows = await flowAPI.getAll();
+			setFlows(flows);
+		}
+		getFlows();
+	}, [])
 
 	// useEffect(() => {
 	// 	history.push('/');
@@ -32,7 +32,7 @@ export default function App(props) {
 					<NavBar user={user} setUser={setUser} />
 					<Switch>
 						<Route path='/flows'>
-							<FlowListPage />
+							<FlowListPage flows={flows}/>
 						</Route>
 						<Route path='/flows/create'>
 							<CreateFlowPage />

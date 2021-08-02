@@ -13,14 +13,14 @@ export default function FlowListPage(props) {
 			<button onClick={handleCheckToken}>
 				Check When My Login Expires
 			</button>
-			{/* <div>
-				{props.flows.map(flow => (
+			<div>
+				{props.flows.map(flow =>
 					<FlowListFlow
 						flow={flow}
 						key={flow._id}
 					/>
-				))} */}
-			{/* </div> */}
+				)}
+			</div>
 		</>
 	);
 }
