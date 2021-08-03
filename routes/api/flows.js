@@ -4,7 +4,7 @@ const flowsCtrl = require('../../controllers/api/flows');
 
 router.get('/', flowsCtrl.index);
 router.post('/', flowsCtrl.create);
-// router.get('/:id', flowsCtrl.show);
+router.get('/:id', flowsCtrl.show);
 router.put('/:id', flowsCtrl.update);
 
 module.exports = router;

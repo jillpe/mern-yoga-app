@@ -3,7 +3,7 @@ const Flow = require('../../models/flow');
 module.exports = {
     index,
     create,
-    // show,
+    show,
     update
 };
 
@@ -17,11 +17,11 @@ async function create(req, res) {
     res.status(201).json(newFlow);
 }
 
-// async function show(req, res) {
-//     console.log('Hitting Show Function')
-//     const flow = await Flow.findById(req.param.id);
-//     res.status(200).json(flow);
-// }
+async function show(req, res) {
+    console.log('Hitting Show Function')
+    const flow = await Flow.findById(req.param.id);
+    res.status(200).json(flow);
+}
 
 async function update(req, res) {
     const updatedFlow = await Flow.findByIdAndUpdate(
