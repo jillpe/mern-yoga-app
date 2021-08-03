@@ -2,7 +2,9 @@ const Flow = require('../../models/flow');
 
 module.exports = {
     index,
-    create
+    create,
+    // show,
+    update
 };
 
 async function index(req, res) {
@@ -13,4 +15,21 @@ async function index(req, res) {
 async function create(req, res) {
     const newFlow = await Flow.create(req.body);
     res.status(201).json(newFlow);
+}
+
+// async function show(req, res) {
+//     console.log('Hitting Show Function')
+//     const flow = await Flow.findById(req.param.id);
+//     res.status(200).json(flow);
+// }
+
+async function update(req, res) {
+    const updatedFlow = await Flow.findByIdAndUpdate(
+        req.params.id, 
+        req.body, 
+        {
+        new: true,
+        }
+    );
+    res.status(200).json(updatedFlow);
 }

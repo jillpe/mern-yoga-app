@@ -18,7 +18,6 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(require('./config/checkToken'));
 
 app.use('/api/users', require('./routes/api/users'));
-// app.post('/api/flows', () => console.log('Hitting flows')); 
 app.use('/api/flows', require('./routes/api/flows'));
 
 app.get('/*', function (req, res) {

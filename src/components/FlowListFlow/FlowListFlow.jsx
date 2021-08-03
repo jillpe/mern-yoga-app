@@ -1,16 +1,19 @@
 import { Link } from 'react-router-dom';
 
-export default function FlowListFlow({ flow }) {
+export default function FlowListFlow({ flow, handleDeleteFlow }) {
     return (
         <>
 
             <Link to="/flows/details">
                 <h2>{flow.name}</h2>
             </Link>
-            <Link to="/flows/edit">
+            <Link to={{
+						pathname: '/flows/edit',
+						state: { flow },
+					}} >
                 Edit
             </Link>
-            <button>Delete</button>
+            <button onClick={() => handleDeleteFlow(flow._id)}>Delete</button>
         </>
     );
 }
