@@ -4,7 +4,8 @@ module.exports = {
     index,
     create,
     show,
-    update
+    update,
+    delete: deleteOne
 };
 
 async function index(req, res) {
@@ -32,4 +33,9 @@ async function update(req, res) {
         }
     );
     res.status(200).json(updatedFlow);
+}
+
+async function deleteOne(req, res) {
+    const deletedFlow = await Flow.findByIdAndRemove(req.params.id);
+    res.status(200).json(deletedFlow);
 }

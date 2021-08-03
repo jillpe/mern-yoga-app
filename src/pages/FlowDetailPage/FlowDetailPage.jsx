@@ -7,7 +7,11 @@ export default function FlowDetailPage(props) {
     return (
         <>
             <h1>Flow Details Page</h1>
-            <FlowDetail flow={flow} key={flow._id} />
+            <FlowDetail 
+            flow={flow} 
+            key={flow._id} 
+            handleDeleteFlow={props.handleDeleteFlow}
+            />
         </>
     );
 }

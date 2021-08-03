@@ -41,6 +41,11 @@ export default function App(props) {
 		setFlows(newFlowsArray);
 	}
 
+	async function handleDeleteFlow(id) {
+		await flowAPI.deleteOne(id);
+		setFlows(flows.filter(f => f._id !== id))
+	}
+
 	return (
 		<main className='App'>
 			{user ? (
@@ -49,7 +54,8 @@ export default function App(props) {
 					<Switch>
 						<Route  exact path='/flows'>
 							<FlowListPage 
-							flows={flows} 
+							flows={flows}
+							handleDeleteFlow={handleDeleteFlow} 
 						/>
 						</Route>
 						<Route exact path='/flows/create'>

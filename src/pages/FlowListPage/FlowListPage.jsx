@@ -18,6 +18,7 @@ export default function FlowListPage(props) {
 					<FlowListFlow
 						flow={flow}
 						key={flow._id}
+						handleDeleteFlow={props.handleDeleteFlow}
 					/>
 				))}
 			</div>

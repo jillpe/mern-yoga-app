@@ -27,3 +27,13 @@ export function update(updatedFlowData) {
 		body: JSON.stringify(updatedFlowData),
 	}).then(res => res.json());
 }
+
+export function deleteOne(id) {
+	const token = getToken();
+	return fetch(`${BASE_URL}/${id}`, {
+		method: 'DELETE',
+		headers: { 'content-type': 'application/json',
+		'Authorization': `Bearer ${token}`},
+
+	}).then(res => res.json());
+}
