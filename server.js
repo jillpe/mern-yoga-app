@@ -17,6 +17,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(require('./config/checkToken'));
 
+const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/flows', require('./routes/api/flows'));
 

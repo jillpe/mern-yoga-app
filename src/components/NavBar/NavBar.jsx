@@ -18,7 +18,7 @@ export default function NavBar({ user, setUser }) {
 			<Link to='flows/create'>Create a Flow</Link>
 			&nbsp; | &nbsp;
 			<span>
-				<b>Welcome, {user.name}</b>
+				<b>Namaste, {user.name}</b>
 			</span>
 			&nbsp; | &nbsp;
 			<Link to='' onClick={handleLogOut}>
