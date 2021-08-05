@@ -29,54 +29,58 @@ export default function EditFlowPage(props) {
         <>
             <h1>Edit Flow</h1>
             <form ref={formRef} onSubmit={handleSubmit}>
-                <div>
-                    <label>Flow Name:</label>
-                    <input
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Category</label>
-                    <select
-                        name="category"
-                        value={formData.category}
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="Vinyasa">Vinyasa</option>
-                        <option value="Hatha">Hatha</option>
-                        <option value="Yin">Yin</option>
-                        <option value="Power">Power</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Pose Sequence</label>
-                    <textarea
-                        name="poses"
-                        value={formData.poses}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Difficulty Level</label>
-                    <select
-                        name="difficulty"
-                        value={formData.difficulty}
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-                <button
+            <div class="mb-3">
+					<label class="form-label">Flow Name:</label>
+					<input lass="form-control"
+						name="name"
+						value={formData.name}
+						onChange={handleChange}
+						required
+					/>
+				</div>
+				<div>
+					<label class="form-label">Category</label>
+					<div>
+					<select class="form-select"
+						name="category"
+						value={formData.category}
+						onChange={handleChange}
+						required
+					>
+						<option value="Vinyasa">Vinyasa</option>
+						<option value="Hatha">Hatha</option>
+						<option value="Yin">Yin</option>
+						<option value="Power">Power</option>
+					</select>
+					</div>
+				</div>
+				<div>
+					<label class="form-label">Pose Sequence</label>
+					<textarea class="form-control"
+						name="poses"
+						value={formData.poses}
+						onChange={handleChange}
+						required
+					/>
+				</div>
+				<div>
+					<label class="form-label">Difficulty Level</label>
+					<div>
+					<select class="form-select"
+						name="difficulty"
+						value={formData.difficulty}
+						onChange={handleChange}
+						required
+					>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					</div>
+				</div>
+                <button class="btn btn-outline-info"
                     type="submit"
                     disabled={invalidForm}
                 >

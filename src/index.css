@@ -14,11 +14,11 @@ code {
 
 :root {
 	--white: #ffffff;
-	--tan-1: #fbf9f6;
-	--tan-2: #e7e2dd;
-	--tan-3: #e2d9d1;
-	--tan-4: #d3c1ae;
-	--orange: #f67f00;
+	--tan-1: #f9f9f9;
+	--tan-2: #f9f9f9;
+	--tan-3: #006c82;
+	--tan-4: #ffffff;
+	--orange: #714961;
 	--text-light: #968c84;
 	--text-dark: #615954;
 }
@@ -100,6 +100,15 @@ code {
 	border-radius: 1vmin;
 }
 
+.login-button, .sign-up-button {
+	background-color: #00C3EB;
+	color: white;
+}
+
+.auth-page-heading {
+	color: #000d10;
+}
+
 p.error-message {
 	color: var(--orange);
 	text-align: center;
@@ -156,12 +165,6 @@ button.btn-sm {
 button.btn-xs {
 	font-size: 1vmin;
 	padding: 0.4vmin 0.5vmin;
-}
-
-button:disabled,
-form:invalid button[type='submit'] {
-	cursor: not-allowed;
-	background-color: var(--tan-4);
 }
 
 button[type='submit'] {

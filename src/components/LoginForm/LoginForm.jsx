@@ -45,7 +45,7 @@ export default function LogIn({ setUser }) {
 						onChange={handleChange}
 						required
 					/>
-					<button type='submit'>LOG IN</button>
+					<button class="btn btn-outline-info" className="login-button" type='submit'>LOG IN</button>
 				</form>
 			</div>
 			<p className='error-message'>&nbsp;{error}</p>

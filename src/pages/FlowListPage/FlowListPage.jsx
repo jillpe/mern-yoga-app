@@ -1,18 +1,11 @@
-import * as usersService from '../../utilities/users-service';
 import FlowListFlow from '../../components/FlowListFlow/FlowListFlow';
 
 export default function FlowListPage(props) {
-	async function handleCheckToken() {
-		const expDate = await usersService.checkToken();
-		console.log(expDate);
-	}
+	
 
 	return (
 		<>
-			<h1>FlowListPage</h1>
-			<button onClick={handleCheckToken}>
-				Check When My Login Expires
-			</button>
+			<h1>Pick a Flow</h1>
 			<div>
 				{props.flows.map(flow => (
 					<FlowListFlow
@@ -22,6 +15,7 @@ export default function FlowListPage(props) {
 					/>
 				))}
 			</div>
+			
 		</>
 	);
 }

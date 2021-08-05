@@ -1,5 +1,9 @@
-.App {
+h1, h5 {
   text-align: center;
+}
+
+.App {
+  text-align: flex-start;
 }
 
 .App-logo {
@@ -35,4 +39,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+form {
+  justify-content: center;
 }

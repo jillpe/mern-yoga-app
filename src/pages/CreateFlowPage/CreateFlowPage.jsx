@@ -31,11 +31,11 @@ export default function CreateFlowPage(props) {
 
 	return (
 		<>
-			<h1>CreateFlowPage</h1>
+			<h1>Create A Flow</h1>
 			<form ref={formRef} onSubmit={handleSubmit}>
-				<div>
-					<label>Flow Name:</label>
-					<input
+				<div class="mb-3">
+					<label class="form-label">Flow Name:</label>
+					<input lass="form-control"
 						name="name"
 						value={formData.name}
 						onChange={handleChange}
@@ -43,8 +43,9 @@ export default function CreateFlowPage(props) {
 					/>
 				</div>
 				<div>
-					<label>Category</label>
-					<select 
+					<label class="form-label">Category</label>
+					<div>
+					<select class="form-select"
 						name="category"
 						value={formData.category}
 						onChange={handleChange}
@@ -55,10 +56,11 @@ export default function CreateFlowPage(props) {
 						<option value="Yin">Yin</option>
 						<option value="Power">Power</option>
 					</select>
+					</div>
 				</div>
 				<div>
-					<label>Pose Sequence</label>
-					<textarea
+					<label class="form-label">Pose Sequence</label>
+					<textarea class="form-control"
 						name="poses"
 						value={formData.poses}
 						onChange={handleChange}
@@ -66,8 +68,9 @@ export default function CreateFlowPage(props) {
 					/>
 				</div>
 				<div>
-					<label>Difficulty Level</label>
-					<select
+					<label class="form-label">Difficulty Level</label>
+					<div>
+					<select class="form-select"
 						name="difficulty"
 						value={formData.difficulty}
 						onChange={handleChange}
@@ -79,8 +82,9 @@ export default function CreateFlowPage(props) {
 						<option value="4">4</option>
 						<option value="5">5</option>
 					</select>
+					</div>
 				</div>
-				<button
+				<button class="btn btn-outline-info"
 					type="submit"
 					disabled={invalidForm}
 				>
