@@ -6,8 +6,6 @@ const logger = require('morgan');
 require('dotenv').config();
 require('./config/database');
 
-// const flowsRouter = require('./routes/api/flows')
-
 const app = express();
 
 app.use(logger('dev'));

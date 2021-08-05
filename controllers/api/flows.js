@@ -19,7 +19,6 @@ async function create(req, res) {
 }
 
 async function show(req, res) {
-    console.log('Hitting Show Function')
     const flow = await Flow.findById(req.param.id);
     res.status(200).json(flow);
 }
